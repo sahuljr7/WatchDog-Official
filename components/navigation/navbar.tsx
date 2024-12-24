@@ -8,7 +8,19 @@ import { Button } from '@/components/ui/button'
 import { SearchModal } from '@/components/search-modal'
 import { useTheme } from 'next-themes'
 
-const navItems = [
+type SubMenuItem = {
+  name: string;
+  href: string;
+  submenu?: SubMenuItem[];
+}
+
+type NavItem = {
+  name: string;
+  href: string;
+  submenu?: SubMenuItem[];
+}
+
+const navItems: NavItem[] = [
   { name: 'Home', href: '/' },
   {
     name: 'Product',
@@ -120,7 +132,7 @@ export function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0">
               <Image
-                src="https://mywatchdog.in/wp-content/uploads/2020/01/WatchDog-Transperent-250x68.png"
+                src="/placeholder.svg"
                 alt="WatchDog Logo"
                 width={180}
                 height={60}
