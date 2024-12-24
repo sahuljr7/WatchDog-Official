@@ -1,5 +1,4 @@
 import { HeroSection } from '@/components/hero-section'
-import { FeaturesSection } from '@/components/features-section'
 import { WhyChooseUs } from '@/components/why-choose-us'
 import { SolutionsSection } from '@/components/solutions-section'
 import { SecurityServices } from '@/components/security-services'

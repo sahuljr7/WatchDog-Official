@@ -10,7 +10,7 @@ import { Select } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
 import { Label } from '@/components/ui/label'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import { AlertCircle, CheckCircle2 } from 'lucide-react'
+import { CheckCircle2 } from 'lucide-react'
 
 const formSchema = z.object({
   companyName: z.string().min(1, { message: "Company Name is required" }),
