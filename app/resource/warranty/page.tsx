@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Select } from "@/components/ui/select"
+import { Select, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select"
 
 const productWarranties = [
   {
@@ -47,16 +47,17 @@ export default function WarrantyPage() {
             <label htmlFor="productName" className="block text-sm font-medium text-gray-700">
               Product Name*
             </label>
-            <Select
-              id="productName"
-              value={productName}
-              onChange={(e) => setProductName(e.target.value)}
-              required
-            >
-              <option value="">Select a product</option>
-              {productNames.map((name) => (
-                <option key={name} value={name}>{name}</option>
-              ))}
+            <Select onValueChange={(value) => setProductName(value)} required>
+              <SelectTrigger id="productName" className="w-full">
+                {productName || "Select a product"}
+              </SelectTrigger>
+              <SelectContent>
+                {productNames.map((name) => (
+                  <SelectItem key={name} value={name}>
+                    {name}
+                  </SelectItem>
+                ))}
+              </SelectContent>
             </Select>
           </div>
           <div>
@@ -89,4 +90,3 @@ export default function WarrantyPage() {
     </div>
   )
 }
-
